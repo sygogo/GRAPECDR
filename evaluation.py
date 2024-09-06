@@ -12,7 +12,7 @@ cwd = os.getcwd()
 
 def add_arguments(args):
     # ['Movies_and_TV', 'Books', 'CDs_and_Vinyl']
-    args.tgt_category = 'Movies_and_TV'
+    args.tgt_category = 'CDs_and_Vinyl'
     args.src_category = 'Books'
     args.raw_data_path = os.path.join(cwd, 'data/raw')
     args.processed_data_path = os.path.join(cwd, 'data/processed')
@@ -20,7 +20,7 @@ def add_arguments(args):
     args.size_features = 300
     args.num_workers = 0
     args.mode = 'eval'
-    args.local_rank = 2
+    args.local_rank = 0
 
 
 if __name__ == '__main__':
@@ -35,7 +35,7 @@ if __name__ == '__main__':
             MAE_list = []
             RMSE_list = []
             print('=================================================')
-            for seed in [42,43,44]:
+            for seed in [42, 43, 44]:
                 args.seed = seed
                 add_arguments(args)
                 enable_full_determinism(seed=args.seed)

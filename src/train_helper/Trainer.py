@@ -126,8 +126,8 @@ class Trainer(object):
         optimizer = Adam(params=model.parameters(), lr=self.args.rate_learning)
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(patience=1, mode='min', optimizer=optimizer)
         train_loader = DataLoader(train_set, batch_size=self.args.batch_size, shuffle=True, collate_fn=train_set.collate_fn, num_workers=self.args.num_workers, worker_init_fn=worker_init_fn)
-        test_set = TrainDataset(self.args, mode='valid')
-        test_loader = DataLoader(test_set, batch_size=1000, collate_fn=test_set.collate_fn, shuffle=True)
+        valid_set = TrainDataset(self.args, mode='validate')
+        test_loader = DataLoader(valid_set, batch_size=1000, collate_fn=valid_set.collate_fn, shuffle=True)
         best_valid_loss = 1e5
         early_stop_tolerance = 0
         for epoch in range(self.args.num_epoch):

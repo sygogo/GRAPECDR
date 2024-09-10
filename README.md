@@ -17,7 +17,7 @@ you can use my data in [data](https://drive.google.com/drive/folders/1bezCXI5yK4
 
 ```
 python data_processing.py --raw_data_pat='data/raw' --processed_data_path='data/processed' --meta_data_path='data/meta' --tgt_category='CDs_and_Vinyl' --src_category='Books' --user_proportions=0.2
-python reviews_processing.py --llm_url=$llm_url --src_category=Books --tgt_category='CDs_and_Vinyl' --test_proportions=0.2
+python reviews_processing.py --llm_url=$llm_url --src_category='Books' --tgt_category='CDs_and_Vinyl' --test_proportions=0.2
 ```
 
 Once the data is processed, train and test the datasets using the following command. Adjust the parameters based on your setup:

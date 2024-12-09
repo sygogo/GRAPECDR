@@ -1,3 +1,4 @@
+The code for the paper "Integrating Group-based Preferences from Coarse to Fine for Cold-start Users Recommendation". Our paper has been accepted by COLING 2024.
 
 ## Dataset Preparation
 We test our algorithms on the Amazon review dataset. and three cross-domain recommendation tasks are built using the following datasets:
